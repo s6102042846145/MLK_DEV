@@ -49,8 +49,10 @@
     <Compile Include="Component\Common\TypeConvertor.cs" />
     <Compile Include="Component\Common\Util.cs" />
     <Compile Include="Dao\Admin\MemberListDao.cs" />
+    <Compile Include="Dao\Admin\SendEmailDao.cs" />
     <Compile Include="Dao\BaseDao.cs" />
     <Compile Include="Dto\Admin\MemberListDto.cs" />
+    <Compile Include="Dto\Admin\SendEmailDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

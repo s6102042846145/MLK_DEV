@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Admin\MemberListController.cs" />
+    <Compile Include="Controllers\Admin\SendEmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -166,6 +167,7 @@
     <Content Include="Views\MemberList\Create.cshtml" />
     <Content Include="Views\MemberList\Edit.cshtml" />
     <Content Include="Views\MemberList\Index.cshtml" />
+    <Content Include="Views\SendEmail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

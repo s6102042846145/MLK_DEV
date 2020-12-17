@@ -16,7 +16,7 @@ namespace AHC_MLK
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "MemberList", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "SendEmail", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

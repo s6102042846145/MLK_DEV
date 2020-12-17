@@ -89,7 +89,7 @@ namespace AHCBL.Dao.Admin
         }
 
 
-        public string SaveMember(MemberListDto member, string action)
+        public string SaveMember(MemberListDto model, string action)
         {
             string result = "OK";
             try
@@ -99,47 +99,47 @@ namespace AHCBL.Dao.Admin
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameterCollection param = cmd.Parameters;
                 param.Clear();
-                AddSQLParam(param, "@id", Util.NVLInt(member.id));
-                AddSQLParam(param, "@username", Util.NVLString(member.username));
-                //AddSQLParam(param, "@password", Util.NVLString(member.password));
-                AddSQLParam(param, "@password", action == "del" ? "" : Util.NVLString(DataCryptography.Encrypt(member.password)));
-                AddSQLParam(param, "@fullname", Util.NVLString(member.fullname));
-                AddSQLParam(param, "@nickname", Util.NVLString(member.nickname));
-                AddSQLParam(param, "@member_level", Util.NVLString(member.level));
-                AddSQLParam(param, "@point", Util.NVLInt(member.point));
-                AddSQLParam(param, "@email", Util.NVLString(member.email));
-                AddSQLParam(param, "@homepage", Util.NVLString(member.homepage));
-                AddSQLParam(param, "@telephone", Util.NVLString(member.telephone));
-                AddSQLParam(param, "@mobile", Util.NVLString(member.mobile));
-                AddSQLParam(param, "@certify_case", Util.NVLString(member.certify_case));
-                AddSQLParam(param, "@certify", Util.NVLString(member.certify));
-                AddSQLParam(param, "@address", Util.NVLString(member.address));
-                AddSQLParam(param, "@address1", Util.NVLString(member.address1));
-                AddSQLParam(param, "@address2", Util.NVLString(member.address2));
-                AddSQLParam(param, "@address3", Util.NVLString(member.address3));
-                AddSQLParam(param, "@icon", Util.NVLString(member.icon));
-                AddSQLParam(param, "@img", Util.NVLString(member.img));
-                AddSQLParam(param, "@mailling", Util.NVLString(member.mailling));
-                AddSQLParam(param, "@sms", Util.NVLString(member.sms));
-                AddSQLParam(param, "@member_open", Util.NVLString(member.open));
-                AddSQLParam(param, "@signature", Util.NVLString(member.signature));
-                AddSQLParam(param, "@profile", Util.NVLString(member.profile));
-                AddSQLParam(param, "@memo", Util.NVLString(member.memo));
-                AddSQLParam(param, "@adviser", Util.NVLString(member.adviser));
-                AddSQLParam(param, "@leave_date", Util.NVLString(member.leave_date));
-                AddSQLParam(param, "@intercept_date", Util.NVLString(member.intercept_date));
-                AddSQLParam(param, "@txt1", Util.NVLString(member.txt1));
-                AddSQLParam(param, "@txt2", Util.NVLString(member.txt2));
-                AddSQLParam(param, "@txt3", Util.NVLString(member.txt3));
-                AddSQLParam(param, "@txt4", Util.NVLString(member.txt4));
-                AddSQLParam(param, "@txt5", Util.NVLString(member.txt5));
-                AddSQLParam(param, "@txt6", Util.NVLString(member.txt6));
-                AddSQLParam(param, "@txt7", Util.NVLString(member.txt7));
-                AddSQLParam(param, "@txt8", Util.NVLString(member.txt8));
-                AddSQLParam(param, "@txt9", Util.NVLString(member.txt9));
-                AddSQLParam(param, "@txt10", Util.NVLString(member.txt10));
+                AddSQLParam(param, "@id", Util.NVLInt(model.id));
+                AddSQLParam(param, "@username", Util.NVLString(model.username));
+                //AddSQLParam(param, "@password", Util.NVLString(model.password));
+                AddSQLParam(param, "@password", action == "del" ? "" : Util.NVLString(DataCryptography.Encrypt(model.password)));
+                AddSQLParam(param, "@fullname", Util.NVLString(model.fullname));
+                AddSQLParam(param, "@nickname", Util.NVLString(model.nickname));
+                AddSQLParam(param, "@member_level", Util.NVLString(model.level));
+                AddSQLParam(param, "@point", Util.NVLInt(model.point));
+                AddSQLParam(param, "@email", Util.NVLString(model.email));
+                AddSQLParam(param, "@homepage", Util.NVLString(model.homepage));
+                AddSQLParam(param, "@telephone", Util.NVLString(model.telephone));
+                AddSQLParam(param, "@mobile", Util.NVLString(model.mobile));
+                AddSQLParam(param, "@certify_case", Util.NVLString(model.certify_case));
+                AddSQLParam(param, "@certify", Util.NVLString(model.certify));
+                AddSQLParam(param, "@address", Util.NVLString(model.address));
+                AddSQLParam(param, "@address1", Util.NVLString(model.address1));
+                AddSQLParam(param, "@address2", Util.NVLString(model.address2));
+                AddSQLParam(param, "@address3", Util.NVLString(model.address3));
+                AddSQLParam(param, "@icon", Util.NVLString(model.icon));
+                AddSQLParam(param, "@img", Util.NVLString(model.img));
+                AddSQLParam(param, "@mailling", Util.NVLString(model.mailling));
+                AddSQLParam(param, "@sms", Util.NVLString(model.sms));
+                AddSQLParam(param, "@member_open", Util.NVLString(model.open));
+                AddSQLParam(param, "@signature", Util.NVLString(model.signature));
+                AddSQLParam(param, "@profile", Util.NVLString(model.profile));
+                AddSQLParam(param, "@memo", Util.NVLString(model.memo));
+                AddSQLParam(param, "@adviser", Util.NVLString(model.adviser));
+                AddSQLParam(param, "@leave_date", Util.NVLString(model.leave_date));
+                AddSQLParam(param, "@intercept_date", Util.NVLString(model.intercept_date));
+                AddSQLParam(param, "@txt1", Util.NVLString(model.txt1));
+                AddSQLParam(param, "@txt2", Util.NVLString(model.txt2));
+                AddSQLParam(param, "@txt3", Util.NVLString(model.txt3));
+                AddSQLParam(param, "@txt4", Util.NVLString(model.txt4));
+                AddSQLParam(param, "@txt5", Util.NVLString(model.txt5));
+                AddSQLParam(param, "@txt6", Util.NVLString(model.txt6));
+                AddSQLParam(param, "@txt7", Util.NVLString(model.txt7));
+                AddSQLParam(param, "@txt8", Util.NVLString(model.txt8));
+                AddSQLParam(param, "@txt9", Util.NVLString(model.txt9));
+                AddSQLParam(param, "@txt10", Util.NVLString(model.txt10));
                 AddSQLParam(param, "@member_id", Util.NVLInt(1));
-                AddSQLParam(param, "@active", Util.NVLInt(member.active));
+                AddSQLParam(param, "@active", Util.NVLInt(model.active));
                 AddSQLParam(param, "@status", action);
 
                 conn.Open();

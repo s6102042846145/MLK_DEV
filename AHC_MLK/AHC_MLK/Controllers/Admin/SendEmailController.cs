@@ -8,31 +8,31 @@ using System.Web.Mvc;
 
 namespace AHC_MLK.Controllers.Admin
 {
-    public class MemberListController : Controller
+    public class SendEmailController : Controller
     {
-        // GET: MemberList
+        // GET: SendEmail
+        // GET: SendEmail
         public ActionResult Index()
         {
-            return View(MemberListDao.Instance.GetMemberList());
-            //return View();
+            return View(SendEmailDao.Instance.GetEmailList());
         }
 
-        // GET: MemberList/Create
+        // GET: SendEmail/Createsss
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: MemberList/Create
+        // POST: SendEmail/Create
         [HttpPost]
-        public ActionResult Create(MemberListDto Member)
+        public ActionResult Create(SendEmailDto email)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
 
-                    string result = MemberListDao.Instance.SaveMember(Member, "add");
+                    string result = SendEmailDao.Instance.SaveEmail(email, "add");
                     if (result != "OK")
                     {
                         ViewBag.Message = result;
@@ -55,28 +55,21 @@ namespace AHC_MLK.Controllers.Admin
             }
         }
 
-        // GET: MemberList/Edit/5
+        // GET: SendEmail/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(MemberListDao.Instance.GetMemberList().Find(smodel => smodel.id == id));
+            return View();
         }
 
-        // POST: MemberList/Edit/5
+        // POST: SendEmail/Edit/5
         [HttpPost]
-        public ActionResult Edit(MemberListDto Member)
+        public ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
-                string result = MemberListDao.Instance.SaveMember(Member, "edit");
-                if (result != "OK")
-                {
-                    ViewBag.Message = result;
-                }
-                else
-                {
-                    return RedirectToAction("Index");
-                }
-                return View();
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -84,21 +77,24 @@ namespace AHC_MLK.Controllers.Admin
             }
         }
 
-        // GET: MemberList/Delete/5      
-        public ActionResult Delete(MemberListDto Member)
+        // GET: SendEmail/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: SendEmail/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
-                string result = MemberListDao.Instance.SaveMember(Member, "del");
-                if (result == "OK")
-                {
-                    ViewBag.Message = "Student Deleted Successfully";
-                }
+                // TODO: Add delete logic here
+
                 return RedirectToAction("Index");
             }
-            catch (Exception e)
+            catch
             {
-                ViewBag.Message = "Error : " + e.Message.ToString();
                 return View();
             }
         }

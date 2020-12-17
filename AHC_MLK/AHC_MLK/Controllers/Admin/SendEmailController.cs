@@ -55,21 +55,28 @@ namespace AHC_MLK.Controllers.Admin
             }
         }
 
-        // GET: SendEmail/Edit/5
+        // GET: MemberList/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(SendEmailDao.Instance.GetEmailList().Find(smodel => smodel.id == id));
         }
 
-        // POST: SendEmail/Edit/5
+        // POST: MemberList/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(SendEmailDto model)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                string result = SendEmailDao.Instance.SaveEmail(model, "edit");
+                if (result != "OK")
+                {
+                    ViewBag.Message = result;
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
+                return View();
             }
             catch
             {
@@ -77,24 +84,21 @@ namespace AHC_MLK.Controllers.Admin
             }
         }
 
-        // GET: SendEmail/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: SendEmail/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        // GET: MemberList/Delete/5      
+        public ActionResult Delete(SendEmailDto model)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                string result = SendEmailDao.Instance.SaveEmail(model, "del");
+                if (result == "OK")
+                {
+                    ViewBag.Message = "Student Deleted Successfully";
+                }
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception e)
             {
+                ViewBag.Message = "Error : " + e.Message.ToString();
                 return View();
             }
         }

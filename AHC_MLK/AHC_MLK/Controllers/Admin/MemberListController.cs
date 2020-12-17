@@ -63,11 +63,11 @@ namespace AHC_MLK.Controllers.Admin
 
         // POST: MemberList/Edit/5
         [HttpPost]
-        public ActionResult Edit(MemberListDto Member)
+        public ActionResult Edit(MemberListDto model)
         {
             try
             {
-                string result = MemberListDao.Instance.SaveMember(Member, "edit");
+                string result = MemberListDao.Instance.SaveMember(model, "edit");
                 if (result != "OK")
                 {
                     ViewBag.Message = result;
@@ -85,11 +85,11 @@ namespace AHC_MLK.Controllers.Admin
         }
 
         // GET: MemberList/Delete/5      
-        public ActionResult Delete(MemberListDto Member)
+        public ActionResult Delete(MemberListDto model)
         {
             try
             {
-                string result = MemberListDao.Instance.SaveMember(Member, "del");
+                string result = MemberListDao.Instance.SaveMember(model, "del");
                 if (result == "OK")
                 {
                     ViewBag.Message = "Student Deleted Successfully";

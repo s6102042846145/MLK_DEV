@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\FAQController.cs" />
     <Compile Include="Controllers\Admin\MemberListController.cs" />
     <Compile Include="Controllers\Admin\SendEmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -168,10 +169,12 @@
     <Content Include="Views\MemberList\Edit.cshtml" />
     <Content Include="Views\MemberList\Index.cshtml" />
     <Content Include="Views\SendEmail\Index.cshtml" />
+    <Content Include="Views\SendEmail\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\FAQ\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

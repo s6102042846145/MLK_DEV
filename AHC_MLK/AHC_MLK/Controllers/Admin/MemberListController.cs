@@ -13,7 +13,8 @@ namespace AHC_MLK.Controllers.Admin
         // GET: MemberList
         public ActionResult Index()
         {
-            return View(MemberListDao.Instance.GetMemberList());
+            //return View(MemberListDao.Instance.GetMemberList());
+            return View();
         }
 
         // GET: MemberList/Create

@@ -10,14 +10,14 @@ namespace AHCBL.Dto.Admin
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string img_t { get; set; }
-        public string img_b { get; set; }
+        public string img_head { get; set; }
+        public string img_tail { get; set; }
         public string detail_hot { get; set; }
-        public string detail_buttom { get; set; }
+        public string detail_tail { get; set; }
         public string detail_hot_mobile { get; set; }
-        public string detail_buttom_mobile { get; set; }
-        public string faq_order { get; set; }
-        public string status { get; set; }
+        public string detail_tail_mobile { get; set; }
+        public int faq_order { get; set; }
+        public int active { get; set; }
 
     }
 }

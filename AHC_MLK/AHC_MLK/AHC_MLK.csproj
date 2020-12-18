@@ -140,6 +140,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> master
     <Content Include="vendor\images\logo.ico" />
     <Content Include="vendor\images\logo.png" />
     <Content Include="vendor\Scripts\bootstrap\js\bootstrap.bundle.js" />
@@ -1981,11 +2003,21 @@
     <Content Include="vendor\Scripts\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="vendor\Scripts\jquery\jquery.min.map" />
     <Content Include="vendor\Scripts\jquery\jquery.slim.min.map" />
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    <Content Include="Views\FAQ\Index.cshtml" />
+>>>>>>> Stashed changes
+=======
+    <Content Include="Views\FAQ\Index.cshtml" />
+>>>>>>> Stashed changes
+>>>>>>> master
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\FAQ\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

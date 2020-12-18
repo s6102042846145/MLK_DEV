@@ -3,40 +3,142 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - TItle </title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link rel="icon" href="/vendor/images/logo.ico" type="image/x-icon" sizes="16x16">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>@ViewBag.Title - Admin</title>
+    @Styles.Render("~/Content/style.css")
+    @Styles.Render("~/Content/main.css")
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar-left -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fa fa-cog"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">ADMIN</div>
+            </a>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+            <!-- line -->
+            <hr class="sidebar-divider my-0">
+
+            <!--  Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <!-- line -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Content
+            </div>
+
+            <!--Collapse กำหนดค่า -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>
+                        환경설정 /
+                        กำหนดค่า
+                    </span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">기본환경설정</h6>
+                        <a class="collapse-item" href="">팝업레이어관리</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Collapse จัดการสมาชิก -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                   aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>회원관리 / จัดการสมาชิก</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">회원관리</h6>
+                        <a class="collapse-item" href="">회원메일발송</a>
+                        <a class="collapse-item" href="">회원관리</a>
+                        <a class="collapse-item" href="">접속자집계</a>
+                        <a class="collapse-item" href="">접속자로그삭제</a>
+                        <a class="collapse-item" href="">복숭아신청리스트</a>
+                        <a class="collapse-item" href="">복숭아신청리스트</a>
+                        <a class="collapse-item" href="">포인트관리</a>
+                        <a class="collapse-item" href="">게시판관리</a>
+                        <a class="collapse-item" href="">관리</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Collapse จัดการประกาศ -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                   aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>게시판관리 / ประกาศ</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">게시판관리</h6>
+                        <a class="collapse-item" href="">1:1문의설정</a>
+                        <a class="collapse-item" href="">내용관리</a>
+                        <a class="collapse-item" href="">FAQ관리</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Collapse การจัดการ -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse"
+                   aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>관리 / การจัดการ</span>
+                </a>
+                <div id="collapse" class="collapse" aria-labelledby="collapse"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">관리</h6>
+                        <a class="collapse-item" href="">분류관리</a>
+                        <a class="collapse-item" href="">상품관리</a>
+                        <a class="collapse-item" href="">당첨리스트</a>
+                        <a class="collapse-item" href="">신고리스트</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- End Sidebar-left -->
+
+
+
+        <div id="content-wrapper" class="d-flex flex-column">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p style="margin-left:5px;">&copy; @DateTime.Now.Year - AHC</p>
+            </footer>
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/vendor/Scripts/jquery/jquery.min.js")
+        @Scripts.Render("~/vendor/Scripts/bootstrap/js/bootstrap.bundle.min.js")
+        @Scripts.Render("~/vendor/Scripts/bootstrap/js/sb-admin-2.min.js")
+        @Scripts.Render("~/vendor/Scripts/jquery-easing/jquery.easing.min.js")
+        @Scripts.Render("~/vendor/Scripts/sb-admin-2.js")
+        @Scripts.Render("~/vendor/Scripts/sb-admin-2.min.js")
+        @RenderSection("scripts", required: false)
+
 </body>
 </html>

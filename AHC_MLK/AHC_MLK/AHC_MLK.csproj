@@ -134,16 +134,17 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\main.css" />
-    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> parent of 0c95a1d... push css
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -157,6 +158,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
@@ -1835,6 +1837,8 @@
     <Content Include="vendor\Scripts\jquery\jquery.slim.min.js" />
     <Content Include="vendor\Scripts\sb-admin-2.js" />
     <Content Include="vendor\Scripts\sb-admin-2.min.js" />
+=======
+>>>>>>> parent of 0c95a1d... push css
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1854,6 +1858,7 @@
     <Content Include="Views\MemberList\Index.cshtml" />
     <Content Include="Views\SendEmail\Index.cshtml" />
     <Content Include="Views\SendEmail\Create.cshtml" />
+<<<<<<< HEAD
     <Content Include="vendor\Scripts\bootstrap\js\bootstrap.bundle.js.map" />
     <Content Include="vendor\Scripts\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="vendor\Scripts\bootstrap\js\bootstrap.js.map" />
@@ -2014,6 +2019,8 @@
     <Content Include="Views\FAQ\Index.cshtml" />
 >>>>>>> Stashed changes
 >>>>>>> master
+=======
+>>>>>>> parent of 0c95a1d... push css
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2029,6 +2036,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AHCBL\AHCBL.csproj">

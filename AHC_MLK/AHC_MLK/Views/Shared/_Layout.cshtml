@@ -120,18 +120,64 @@
             </li>
         </ul>
         <!-- End Sidebar-left -->
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <!-- Topbar headedr-->
+                <ul class="navbar">
+                    <li class="nav-item " style="list-style:none; color:#000000;">
+                        <span id="tHead">몽키레전드코리아</span>
+                    </li>
+                </ul>
+                <!-- End Topbar- header-->
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Navbar fixed-top -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="bg-success btn">GAME</button>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="bg-success btn">SYSTEM</button>
+                        </a>
+                        <!-- Dropdown Information-admin -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Profile
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
 
 
 
-        <div id="content-wrapper" class="d-flex flex-column">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p style="margin-left:5px;">&copy; @DateTime.Now.Year - AHC</p>
-            </footer>
+            <div id="content-wrapper" class="d-flex flex-column">
+                @RenderBody()
+
+                <hr />
+                <footer>
+                    <p style="margin-left:5px;">&copy; @DateTime.Now.Year - AHC</p>
+                </footer>
+            </div>
         </div>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
+        <!-- End of Main Content -->
+
         @Scripts.Render("~/vendor/Scripts/jquery/jquery.min.js")
         @Scripts.Render("~/vendor/Scripts/bootstrap/js/bootstrap.bundle.min.js")
         @Scripts.Render("~/vendor/Scripts/bootstrap/js/sb-admin-2.min.js")

@@ -5,244 +5,253 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fullname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nickname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.level)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.point)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.homepage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telephone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.mobile)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.certify_case)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.certify)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.address1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.address2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.address3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.icon)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.img)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.mailling)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sms)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.open)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.signature)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.profile)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.memo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.adviser)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.leave_date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.intercept_date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt4)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt5)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt6)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt7)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt8)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt9)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.txt10)
-        </th>
-        <th></th>
-    </tr>
-    @if (Model != null && Model.Count() != 0)
-    {
-        foreach (var item in Model)
+<style type="text/css">
+    td.block {
+        border: 1px solid black;
+    }
+</style>
+<div style="overflow-x:auto;">
+    <table class="table">
+        <tr>
+            <th>
+                <span>아이디</span>
+            </th>
+            <th>
+                <span>우콩</span>
+            </th>
+            <th>
+                <span>슈프림</span>
+            </th>
+            <th>
+                <span>활성화수</span>
+            </th>
+            <th>
+                <spam>우콩 예약현황</spam>
+            </th>
+            <th>
+                <span>슈프림 예약현황</span>
+            </th>
+            <th>
+                <span>몽키킹 예약현황</span>
+            </th>
+            <th>
+                <span>설정금액</span>
+            </th>
+            <th>
+                <span>가용금액</span>
+            </th>
+            <th>
+                <span>당첨금액+보유자산</span>
+            </th>
+            <th>
+                <span>당첨수</span>
+            </th>
+            <th>
+                <span>당첨금액</span>
+            </th>
+            <th>
+                <span>복숭아 수</span>
+            </th>
+            <th>
+                <span>보유자산</span>
+            </th>
+            <th>
+                <span>상태</span>
+            </th>
+            <th>
+                <span>권한</span>
+            </th>
+            <th>
+                <span>휴대폰</span>
+            </th>
+            <th>
+                <span>전화번호</span>
+            </th>
+            <th>
+                <span>최종접속</span>
+            </th>
+            <th>
+                <span>가입일</span>
+            </th>
+            <th>
+                <span>관리</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+            <th>
+                <span>xxx</span>
+            </th>
+        </tr>
+        @if (Model != null && Model.Count() != 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fullname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nickname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.level)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.point)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.homepage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telephone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mobile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.certify_case)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.certify)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.icon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.img)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mailling)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sms)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.open)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.signature)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.profile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.memo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.adviser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.leave_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.intercept_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt6)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt7)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt8)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt9)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.txt10)
+                    </td>
+                    <td>
+                        <span class="btn btn-primary">@Html.ActionLink("Edit", "Edit", new { id = item.id })</span> |
+                        <span class="btn btn-primary">@Html.ActionLink("Delete", "Delete", new { id = item.id })</span>
+</td>
+                </tr>
+            }
+        }
+        else
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.username)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.fullname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nickname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.level)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.point)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.homepage)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.telephone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.mobile)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.certify_case)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.certify)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.address1)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.address2)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.address3)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.icon)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.img)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.mailling)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.sms)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.open)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.signature)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.profile)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.memo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.adviser)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.leave_date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.intercept_date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt1)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt2)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt3)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt4)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt5)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt6)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt7)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt8)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt9)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.txt10)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                <td colspan="37" class="text-center">
+                    No Data !!
                 </td>
             </tr>
         }
-    }
-    else
-    {
-        <tr>
-            <td colspan="37" class="text-center">
-                No Data !!
-            </td>
-        </tr>
-    }
-</table>
+    </table>
+</div>

@@ -1,9 +1,10 @@
 ﻿using AHCBL.Component.Common;
 using AHCBL.Dto.Admin;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace AHCBL.Dao.Admin
 {
     public class SendEmailDao : BaseDao<SendEmailDao>
     {
-        private SqlConnection conn;
+        private MySqlConnection conn;
         private DataTable dt;
         public List<SendEmailDto> GetEmailList()
         {
@@ -21,10 +22,10 @@ namespace AHCBL.Dao.Admin
                 dt = new DataTable();
                 List<SendEmailDto> email = new List<SendEmailDto>();
                 conn = CreateConnection();
-                SqlCommand cmd = new SqlCommand("PD005_GET_EMAILS", conn);
+                MySqlCommand cmd = new MySqlCommand("PD005_GET_EMAILS", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameterCollection param = cmd.Parameters;
-                SqlDataAdapter sd = new SqlDataAdapter(cmd);
+                MySqlParameterCollection param = cmd.Parameters;
+                MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
                 param.Clear();
                 AddSQLParam(param, "@member_id", Util.NVLString(1));
 
@@ -60,9 +61,9 @@ namespace AHCBL.Dao.Admin
             try
             {
                 conn = CreateConnection();
-                SqlCommand cmd = new SqlCommand("PD002_SAVE_EMAIL", conn);
+                MySqlCommand cmd = new MySqlCommand("PD002_SAVE_EMAIL", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameterCollection param = cmd.Parameters;
+                MySqlParameterCollection param = cmd.Parameters;
                 param.Clear();
                 AddSQLParam(param, "@id", Util.NVLInt(model.id));
                 AddSQLParam(param, "@name", Util.NVLString(model.name));
@@ -70,7 +71,7 @@ namespace AHCBL.Dao.Admin
                 AddSQLParam(param, "@status", action);
 
                 conn.Open();
-                SqlDataReader read = cmd.ExecuteReader();
+                MySqlDataReader read = cmd.ExecuteReader();
                 while (read.Read())
                 {
                     result = read.GetString(0).ToString();

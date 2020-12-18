@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace AHCBL.Dao
 {
@@ -35,23 +36,23 @@ namespace AHCBL.Dao
         }
 
         #region Connection
-        protected SqlConnection CreateConnection()
+        protected MySqlConnection CreateConnection()
         {
             string constr = ConfigurationManager.AppSettings["Constr"];
             string dbpass = ConfigurationManager.AppSettings["DBPASS"];
             string dbpassPain = DataCryptography.Decrypt(dbpass);
             constr = constr + dbpassPain;
-            SqlConnection con = new SqlConnection(constr);
+            MySqlConnection con = new MySqlConnection(constr);
             return con;
         }
         #endregion
 
-        protected void AddSQLParam(SqlParameterCollection @params, string name, object val)
+        protected void AddSQLParam(MySqlParameterCollection @params, string name, object val)
         {
-            AddSQLParam(@params, name, val, TypeConvertor.ToSqlDbType(val));
+            AddSQLParam(@params, name, val, TypeConvertor.ToMySqlDbType(val));
         }
 
-        protected void AddSQLParam(SqlParameterCollection @params, string name, object val, System.Data.SqlDbType type)
+        protected void AddSQLParam(MySqlParameterCollection @params, string name, object val, MySqlDbType type)
         {
             object paramValue = getParamValue(val);
 

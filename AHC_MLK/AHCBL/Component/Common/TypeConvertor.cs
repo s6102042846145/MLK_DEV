@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -14,12 +15,12 @@ namespace AHCBL.Component.Common
         {
             public Type Type;
             public DbType DbType;
-            public SqlDbType SqlDbType;
-            public DbTypeMapEntry(Type type, DbType dbType, SqlDbType sqlDbType)
+            public MySqlDbType MySqlDbType;
+            public DbTypeMapEntry(Type type, DbType dbType, MySqlDbType MySqlDbType)
             {
                 this.Type = type;
                 this.DbType = dbType;
-                this.SqlDbType = sqlDbType;
+                this.MySqlDbType = MySqlDbType;
             }
         }
 
@@ -31,47 +32,47 @@ namespace AHCBL.Component.Common
         {
             DbTypeMapEntry dbTypeMapEntry;
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(DBNull), DbType.String, SqlDbType.VarChar);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(DBNull), DbType.String, MySqlDbType.VarChar);
             _DbTypeList.Add(dbTypeMapEntry);
 
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(bool), DbType.Boolean, SqlDbType.Bit);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(bool), DbType.Boolean, MySqlDbType.Bit);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(byte), DbType.Double, SqlDbType.TinyInt);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(byte), DbType.Double, MySqlDbType.Double);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(byte[]), DbType.Binary, SqlDbType.Image);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(byte[]), DbType.Binary, MySqlDbType.Binary);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(DateTime), DbType.DateTime, SqlDbType.DateTime);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(DateTime), DbType.DateTime, MySqlDbType.DateTime);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(Decimal), DbType.Decimal, SqlDbType.Decimal);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(Decimal), DbType.Decimal, MySqlDbType.Decimal);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(double), DbType.Double, SqlDbType.Float);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(double), DbType.Double, MySqlDbType.Float);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(Guid), DbType.Guid, SqlDbType.UniqueIdentifier);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(Guid), DbType.Guid, MySqlDbType.Guid);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(Int16), DbType.Int16, SqlDbType.SmallInt);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(Int16), DbType.Int16, MySqlDbType.Int16);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(Int32), DbType.Int32, SqlDbType.Int);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(Int32), DbType.Int32, MySqlDbType.Int32);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(Int64), DbType.Int64, SqlDbType.BigInt);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(Int64), DbType.Int64, MySqlDbType.Int64);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(object), DbType.Object, SqlDbType.Variant);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(object), DbType.Object, MySqlDbType.Bit);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(string), DbType.String, SqlDbType.VarChar);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(string), DbType.String, MySqlDbType.VarChar);
             _DbTypeList.Add(dbTypeMapEntry);
 
-            dbTypeMapEntry = new DbTypeMapEntry(typeof(decimal), DbType.Decimal, SqlDbType.Decimal);
+            dbTypeMapEntry = new DbTypeMapEntry(typeof(decimal), DbType.Decimal, MySqlDbType.Decimal);
             _DbTypeList.Add(dbTypeMapEntry);
         }
 
@@ -100,11 +101,11 @@ namespace AHCBL.Component.Common
         /// <summary>
         /// Convert TSQL type to .Net data type
         /// </summary>
-        /// <param name="sqlDbType"></param>
+        /// <param name="MySqlDbType"></param>
         /// <returns></returns>
-        public static Type ToNetType(SqlDbType sqlDbType)
+        public static Type ToNetType(MySqlDbType MySqlDbType)
         {
-            DbTypeMapEntry entry = Find(sqlDbType);
+            DbTypeMapEntry entry = Find(MySqlDbType);
             return entry.Type;
         }
 
@@ -122,11 +123,11 @@ namespace AHCBL.Component.Common
         /// <summary>
         /// Convert TSQL data type to DbType
         /// </summary>
-        /// <param name="sqlDbType"></param>
+        /// <param name="MySqlDbType"></param>
         /// <returns></returns>
-        public static DbType ToDbType(SqlDbType sqlDbType)
+        public static DbType ToDbType(MySqlDbType MySqlDbType)
         {
-            DbTypeMapEntry entry = Find(sqlDbType);
+            DbTypeMapEntry entry = Find(MySqlDbType);
             return entry.DbType;
         }
 
@@ -136,10 +137,10 @@ namespace AHCBL.Component.Common
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static SqlDbType ToSqlDbType(Type type)
+        public static MySqlDbType ToMySqlDbType(Type type)
         {
             DbTypeMapEntry entry = Find(type);
-            return entry.SqlDbType;
+            return entry.MySqlDbType;
         }
 
         /// <summary>
@@ -147,15 +148,15 @@ namespace AHCBL.Component.Common
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static SqlDbType ToSqlDbType(object val)
+        public static MySqlDbType ToMySqlDbType(object val)
         {
             if (val == null)
             {
-                return SqlDbType.VarChar;
+                return MySqlDbType.VarChar;
             }
 
             DbTypeMapEntry entry = Find(val.GetType());
-            return entry.SqlDbType;
+            return entry.MySqlDbType;
         }
 
         /// <summary>
@@ -163,10 +164,10 @@ namespace AHCBL.Component.Common
         /// </summary>
         /// <param name="dbType"></param>
         /// <returns></returns>
-        public static SqlDbType ToSqlDbType(DbType dbType)
+        public static MySqlDbType ToMySqlDbType(DbType dbType)
         {
             DbTypeMapEntry entry = Find(dbType);
-            return entry.SqlDbType;
+            return entry.MySqlDbType;
         }
 
 
@@ -211,13 +212,13 @@ namespace AHCBL.Component.Common
             return (DbTypeMapEntry)retObj;
         }
 
-        private static DbTypeMapEntry Find(SqlDbType sqlDbType)
+        private static DbTypeMapEntry Find(MySqlDbType MySqlDbType)
         {
             object retObj = null;
             for (int i = 0; i < _DbTypeList.Count; i++)
             {
                 DbTypeMapEntry entry = (DbTypeMapEntry)_DbTypeList[i];
-                if (entry.SqlDbType == sqlDbType)
+                if (entry.MySqlDbType == MySqlDbType)
                 {
                     retObj = entry;
                     break;
@@ -225,7 +226,7 @@ namespace AHCBL.Component.Common
             }
             if (retObj == null)
             {
-                throw new ApplicationException("Referenced an unsupported SqlDbType");
+                throw new ApplicationException("Referenced an unsupported MySqlDbType");
             }
 
             return (DbTypeMapEntry)retObj;

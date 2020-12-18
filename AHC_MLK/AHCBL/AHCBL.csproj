@@ -54,6 +54,7 @@
     <Compile Include="Component\Common\Form.cs" />
     <Compile Include="Component\Common\TypeConvertor.cs" />
     <Compile Include="Component\Common\Util.cs" />
+    <Compile Include="Dao\Admin\FAQDao.cs" />
     <Compile Include="Dao\Admin\MemberListDao.cs" />
     <Compile Include="Dao\Admin\SendEmailDao.cs" />
     <Compile Include="Dao\BaseDao.cs" />
